@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task 4</title>
+</head>
+
+<body>
+    <!-- Задание 4 (тайминг 20 минут)
+Вам предоставляется задача создать простой онлайн опросник, который позволяет пользователям
+отвечать на вопросы с вариантами ответов. Ваша задача - разработать интерфейс и функциональность
+для этого опросника, используя HTML, CSS и JavaScript.
+1. Создайте интерфейс с несколькими вопросами и вариантами ответов. Каждый вопрос должен
+иметь несколько вариантов ответов.
+2. Реализуйте обработку событий, чтобы пользователи могли выбирать варианты ответов.
+3. Добавьте кнопку "Завершить опрос", которая будет показывать результаты опроса.
+4. При нажатии на кнопку "Завершить опрос", вы должны проверить, что пользователь ответил на все
+вопросы, и отобразить выбранные им варианты ответов.
+5. Если пользователь не ответил на все вопросы, покажите ему сообщение о необходимости ответить
+на все вопросы перед завершением опроса.
+6. По желанию можно добавить стилизацию опросника с использованием CSS для лучшего
+пользовательского опыта. -->
+
+    <div class="quiz-container">
+        <h1>Опросник</h1>
+
+        <!-- Вопрос 1 -->
+        <div class="question">
+            <p>1. Какой ваш любимый цвет?</p>
+            <ul class="answers">
+                <li><input type="radio" name="question1" value="Красный">Красный</li>
+                <li><input type="radio" name="question1" value="Синий">Синий</li>
+                <li><input type="radio" name="question1" value="Зеленый">Зеленый</li>
+                <li><input type="radio" name="question1" value="Желтый">Желтый</li>
+            </ul>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="question">
+            <p>2. Какое ваше любимое животное?</p>
+            <ul class="answers">
+                <li><input type="radio" name="question2" value="Кошка">Кошка</li>
+                <li><input type="radio" name="question2" value="Собака">Собака</li>
+                <li><input type="radio" name="question2" value="Тигр">Тигр</li>
+                <li><input type="radio" name="question2" value="Птица">Птица</li>
+            </ul>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="question">
+            <p>3. Какое ваше любимое время года?</p>
+            <ul class="answers">
+                <li><input type="radio" name="question3" value="Зима">Зима</li>
+                <li><input type="radio" name="question3" value="Весна">Весна</li>
+                <li><input type="radio" name="question3" value="Лето">Лето</li>
+                <li><input type="radio" name="question3" value="Осень">Осень</li>
+            </ul>
+        </div>
+
+        <!-- Кнопка завершения опроса -->
+        <button class="finish-btn">Завершить опрос</button>
+
+        <!-- Сообщение об ошибке -->
+        <p class="error" style="display: none;">Пожалуйста, ответьте на все вопросы!</p>
+
+        <!-- Результаты -->
+        <div class="results" style="display: none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

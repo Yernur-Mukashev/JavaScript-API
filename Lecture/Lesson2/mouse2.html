@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="context-menu">
+        <ul>
+            <li>list 1</li>
+            <li>list 2</li>
+            <li>list 3</li>
+            <li>list 4</li>
+            <li>list 5</li>
+        </ul>
+    </div>
+
+    <script>
+        // У клавиатуры имеются два основных события:
+        // ● keydown (при нажатии кнопки)
+        // ● keyup (при отпускании кнопки)
+        // У события есть свойства с кодом (code) нажатой клавиши и её ключом (key).
+        // Ключ – это символ клавиши. Код — это «физический код клавиши
+
+        const contextMenu = document.getElementById('context-menu');
+
+        document.addEventListener('click', function (e) {
+            if (e.target !== contextMenu) { // кликаем в не тексте
+                contextMenu.style.display = 'none'; // список скроется
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.code === 'Space') { // через пробел текст появляется
+                contextMenu.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       /* Базовые стили для кнопки */
+       .open-modal-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        /* Стили модального окна */
+        .modal {
+            display: none; /* Скрываем модальное окно по умолчанию */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+            opacity: 1; /*Прозрачное состояние по умолчанию*/
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Кнопка для закрытия модального окна */
+        .close-modal-btn {
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Показать модальное окно
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <!-- Задание 2 (тайминг 15 минут)
+Создайте простое модальное окно, которое появляется при клике на кнопку "Открыть
+модальное окно" и закрывается при клике на кнопку "Закрыть". Модальное окно
+должно содержать заголовок "Модальное окно" и кнопку для закрытия.
+* Модальное окно должно плавно появляться и исчезать при открытии и закрытии. -->
+
+    <button class="open-modal-btn">Открыть модальное окно</button>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>Модальное окно</h2>
+            <p>Нажмите кнопку "Закрыть", чтобы закрыть окно.</p>
+            <button class="close-modal-btn">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const openModalBtn = document.querySelector('.open-modal-btn');
+        const closeModalBtn = document.querySelector('.close-modal-btn');
+
+        openModalBtn.addEventListener('click', function () {
+            // modal.classList.add('show');
+            modal.style.display = 'block';
+        });
+
+        closeModalBtn.addEventListener('click', function () {
+            // modal.classList.remove('show');
+            modal.style.display = 'none';
+            });
+    </script>
+</body>
+
+</html>

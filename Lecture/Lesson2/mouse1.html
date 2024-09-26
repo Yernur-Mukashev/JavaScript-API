@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .menu-item {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    /* .menu-item:hover {
+        background-color: #f0f0f0;
+    } */
+</style>
+<body>
+    
+    <!-- События мыши
+mousedown - кнопка мыши нажата над элементом
+mouseup - кнопка мыши отпущена над элементом
+click - кнопка мыши нажата и отпущена над элементом
+dblclick - двойной клик на элементе
+mouseover - курсор мыши наведён на элемент
+mouseout - курсор мыши покинул зону элемента
+mousemove - произошло любое движение мышью
+contextmenu - произошёл вызов контекстного меню -->
+
+<div class="menu">
+    <div class="menu-item">Пункт 1</div>
+    <div class="menu-item">Пункт 2</div>
+    <div class="menu-item">Пункт 3</div>
+</div>
+
+<script>
+    const menuItem = document.querySelectorAll('.menu-item');
+
+    menuItem.forEach(item => {
+        item.addEventListener('mouseover', function (e) { // курсор мыши наведён на элемент
+            item.style.backgroundColor = 'red';
+        });
+
+        item.addEventListener('mouseout', function (e) { // курсор мыши покинул зону элемента
+            item.style.backgroundColor = '';
+        });
+
+        item.addEventListener('click', function (e) { // кнопка мыши нажата и отпущена над элементом
+            console.log(item.textContent);
+        });
+    });
+</script>
+
+</body>
+</html>

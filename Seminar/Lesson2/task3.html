@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .btn {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <!-- Задание 3 (тайминг 10 минут)
+У вас есть кнопка "Купить". Создайте скрипт, который при клике на эту кнопку меняет её текст на "Товар
+добавлен в корзину" в течение 2 секунд, а затем возвращает исходный текст "Купить". В обработчике
+события клика также проверьте, является ли событие доверенным. Если событие является доверенным,
+выполните изменение текста кнопки и убедитесь, что после 2 секунд текст возвращается в исходное
+состояние. -->
+
+    <button class="btn">Купить</button>
+
+    <script>
+        const button = document.querySelector('.btn');
+        button.addEventListener('click', function (e) {
+            if (e.isTrusted) {
+                const originalText = button.textContent;
+                button.textContent = 'Товар добавлен в корзину';
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+
+</html>
